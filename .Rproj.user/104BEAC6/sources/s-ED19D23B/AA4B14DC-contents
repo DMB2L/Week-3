@@ -1,0 +1,17 @@
+#Create a matrix
+mat<--matrix(1:9, nrow=3, byrow=TRUE)
+
+# lists your R version, operating system, and loaded packages?
+sessionInfo()
+
+#Install Package Kernsmooth
+install.packages("KernSmooth")
+
+#Get information about the package e.g. authors,desription
+packageDescription("KernSmooth")
+
+#Citation Information
+citation("KernSmooth")
+
+#Copyright Information
+library(KernSmooth)

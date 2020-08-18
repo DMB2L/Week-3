@@ -1,0 +1,9 @@
+{
+    "path" : "~/John Hopkins Course",
+    "sortOrder" : [
+        {
+            "ascending" : true,
+            "columnIndex" : 2
+        }
+    ]
+}
