@@ -175,7 +175,7 @@ install.packages("data.table")
 library(data.table)
 
 #Save data
-quiz_data<-fread('/Users/AlexParis/Downloads/hw1_data.csv')
+quiz_data<-fread('/Users/AlexParis/Desktop/Johns_Hopkins/hw1_data.csv')
 quiz_data
 
 #Column names
@@ -216,4 +216,147 @@ colMeans(subset(x=quiz_data, subset = Month == 6, select=Ozone), na.rm = TRUE)
 #What was the maximum ozone value in the month of May (i.e. Month = 5)?
 max(subset(x=quiz_data,subset = Month == 5, select = Ozone), na.rm = TRUE)
 
+#Control structures
+# If, Else: Test if a condition is true
+# For: Create a loop to run a fixed number of times
+# While: Create a loop to run while a condition is TRUE
+# Break: Break the execution of a loop
+# Return: Exit a function
+# If, is followed by a number of else if, which is ended by an else statement
 
+#For each element in 1:10 print the element
+for(i in 1:10)
+{print(i)}
+
+x<-c("a","b","c")
+for(letter in x) {
+  print(letter)}
+
+#While loop; takes a logical expression and executes the loop based on that 
+#logical expression
+
+#While loops are also infinite loops as opposed to for loops
+count <- 0
+while(count<10) {
+  print(count)
+  count<-count+1
+  }
+
+#Repeat initiates an infinite loop and you need to use break to stop it.
+
+#Next skips a step in the loop
+
+#Week 2 swirl
+install.packages("swirl")
+library(swirl)
+install_from_swirl("RProgramming")
+swirl()
+
+'''
+There are two logical values in R, also called boolean values. They are TRUE
+| and FALSE. In R you can construct logical expressions which will evaluate to
+| either TRUE or FALSE.
+
+Just like arithmetic, logical expressions can be grouped by parenthesis so that
+| the entire expression (TRUE == TRUE) == TRUE evaluates to TRUE.
+
+| The next operator we will discuss is the 'not equals' operator represented by
+| `!=`. Not equals tests whether two values are unequal, so TRUE != FALSE
+| evaluates to TRUE. Like the equality operator, `!=` can also be used with
+| numbers. Try writing an expression to see if 5 is not equal to 7.
+
+Lets take a moment to review. The equals operator `==` tests whether two
+| boolean values or numbers are equal, the not equals operator `!=` tests whether
+| two boolean values or numbers are unequal, and the NOT operator `!` negates
+| logical expressions so that TRUE expressions become FALSE and FALSE expressions
+| become TRUE.
+
+| Lets look at how the AND operator works. There are two AND operators in R, `&`
+| and `&&`. Both operators work similarly, if the right and left operands of AND
+| are both TRUE the entire expression is TRUE, otherwise it is FALSE. For
+| example, TRUE & TRUE evaluates to TRUE. Try typing FALSE & FALSE to how it is
+| evaluated.
+
+| The OR operator follows a similar set of rules. The `|` version of OR evaluates
+| OR across an entire vector, while the `||` version of OR only evaluates the
+| first member of a vector.
+
+5 > 8 || 6 != 8 && 4 > 3.9
+[1] TRUE
+
+| Lets walk through the order of operations in the above case. First the left
+| and right operands of the AND operator are evaluated. 6 is not equal 8, 4 is
+| greater than 3.9, therefore both operands are TRUE so the resulting expression
+| `TRUE && TRUE` evaluates to TRUE. Then the left operand of the OR operator is
+| evaluated: 5 is not greater than 8 so the entire expression is reduced to FALSE
+| || TRUE. Since the right operand of this expression is TRUE the entire
+| expression evaluates to TRUE.
+
+| The function isTRUE() takes one argument. If that argument evaluates to TRUE,
+| the function will return TRUE. Otherwise, the function will return FALSE. Try
+| using this function by typing: isTRUE(6 > 4)
+
+| xor() function stands for exclusive OR. If one argument evaluates to TRUE and
+| one argument evaluates to FALSE, then this function will return TRUE, otherwise
+| it will return FALSE. Try out the xor() function by typing: xor(5 == 6, !FALSE)
+
+To see which elements of ints are larger than 5 type: ints > 5
+
+'''
+
+ints<-sample(10)
+ints
+
+#FUNCTIONS
+
+'''
+| Functions usually take arguments which are variables that the function operates
+| on. For example, the mean() function takes a vector as an argument, like in the
+| case of mean(c(2,6,8)). The mean() function then adds up all of the numbers in
+| the vector and divides that sum by the length of the vector.
+
+| If you want to see the source code for any function, just type the function
+| name without any arguments or parentheses. Lets try this out with the function
+| you just created. Type: boring_function to view its source code.
+
+Example of a function:
+'''
+
+my_mean <- function(my_vector) {
+  sum(my_vector)
+  length(my_vector)
+  mean1<-sum(my_vector)/length(my_vector)
+}
+
+'''
+| Next, lets try writing a function with default arguments. You can set default
+| values for a functions arguments, and this can be useful if you think someone
+| who uses your function will set a certain argument to the same value most of
+| the time.
+
+# Youre going to write a function called "remainder." remainder() will take
+# two arguments: "num" and "divisor" where "num" is divided by "divisor" and
+# the remainder is returned. Imagine that you usually want to know the remainder
+# when you divide by 2, so set the default value of "divisor" to 2. Please be
+# sure that "num" is the first argument and "divisor" is the second argument.
+#
+# Hint #1: You can use the modulus operator %% to find the remainder.
+#   Ex: 7 %% 4 evaluates to 3. 
+#
+# Remember to set appropriate default values! Be sure to save this 
+# script and type submit() in the console after you write the function.
+'''
+remainder <- function(num, divisor = 2) {
+  value=num%%divisor
+  value
+}
+
+#To return the arguments of your function type:
+args(remainder)
+
+#Anonymous Function
+evaluate(function(x){x[length(x)]}, c(8, 4, 0))
+
+'''
+
+'''
